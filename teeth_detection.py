@@ -1,11 +1,11 @@
 from ultralytics import YOLO, hub 
 import cv2 
 
-hub.login('a71906bb98e5bcbb2053baf5ea6d9b40bef22775f1')
+hub.login('API_LOGIN')
 
-model = YOLO('https://hub.ultralytics.com/models/XPJXCUZ5N3989s1Z86J2')
+model = YOLO('YOLO_LINK_ROBOFLOW')
 
-image_path = 'DENTISTRY/tooth_detection_and_numbering/teeth_xray4.jpg'
+image_path = 'teeth_xray4.jpg'
 
 
 img = cv2.imread(image_path)
@@ -37,4 +37,5 @@ for i, (_, (x1, y1, x2, y2), label, conf) in enumerate(detections):
     
 cv2.imshow("Detected Teeth", img_resized)
 cv2.waitKey(0)
+
 cv2.destroyAllWindows()
